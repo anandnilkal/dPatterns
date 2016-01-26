@@ -11,5 +11,6 @@
 
 #include <stdio.h>
 #include "AbstractFactory.hpp"
+#include "mystring.hpp"
 
 #endif /* main_hpp */

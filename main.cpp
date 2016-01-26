@@ -18,4 +18,10 @@ int main(int argc, char** argv){
 	if(!nullptr) {
 		delete object;
 	}
+	
+	mystring one("hello");
+	mystring two(10);
+	two.assign("anand");
+	std::cout << one.getbuf() << " " << two.getbuf() << std::endl;
+	
 }
