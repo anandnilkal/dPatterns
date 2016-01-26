@@ -38,6 +38,7 @@ namespace imo {
 	
 			void operator=(mystring&);
 			void operator=(const mystring&);
+
 			size_t length() const;
 			char* getbuf() const;
 	

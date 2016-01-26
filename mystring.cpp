@@ -52,14 +52,14 @@ namespace imo {
 	
 	void mystring::assign(char* in) {
 		if(buflen < strlen(in)) {
-			throw bad_alloc();
+			throw imo_exception();
 		}
 		strncpy(buf, in, strlen(in));
 	}
 	
 	void mystring::assign(const char* in) {
 		if(buflen < strlen(in)) {
-			throw bad_alloc();
+			throw imo_exception();
 		}
 		strncpy(buf, in, strlen(in));
 	}
@@ -82,14 +82,14 @@ namespace imo {
 	
 	void mystring::operator=(char *in){
 		if(buflen < strlen(in)) {
-			throw bad_alloc();
+			throw imo_exception();
 		}
 		strncpy(buf, in, strlen(in));
 	}
 	
 	void mystring::operator=(const char *in){
 		if(buflen < strlen(in)) {
-			throw bad_alloc();
+			throw imo_exception();
 		}
 		strncpy(buf, in, strlen(in));
 	}

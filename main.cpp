@@ -30,5 +30,10 @@ int main(int argc, char** argv){
 	four.assign("anand");
 	
 	std::cout << three.getbuf() << " " << four.getbuf() << std::endl;
-	
+	mystring five(1);
+	try {
+		five.assign("hello");
+	} catch (imo::imo_exception& e) {
+		std::cout << e.what() << std::endl;
+	}
 }
