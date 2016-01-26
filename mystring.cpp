@@ -21,9 +21,9 @@ namespace imo {
 	}
 	
 	mystring::mystring(uint32_t len) {
+		buflen = len;
 		buf = reinterpret_cast<char*>(std::malloc(len + 1));
 		std::memset(buf, 0, len+1);
-		buflen = len;
 	}
 	
 	mystring::mystring(const char* in) {
