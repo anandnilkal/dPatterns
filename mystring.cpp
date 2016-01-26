@@ -63,4 +63,34 @@ namespace imo {
 		}
 		strncpy(buf, in, strlen(in));
 	}
+	
+	void mystring::operator=(mystring& in){
+		buflen = in.length();
+		buf = reinterpret_cast<char*>(std::malloc(buflen + 1));
+		std::memset(buf, 0, buflen+1);
+		strncpy(buf, in.getbuf(), buflen);
+		buf[buflen] = '\0';
+	}
+	
+	void mystring::operator=(const mystring& in){
+		buflen = in.length();
+		buf = reinterpret_cast<char*>(std::malloc(buflen + 1));
+		std::memset(buf, 0, buflen+1);
+		strncpy(buf, in.getbuf(), buflen);
+		buf[buflen] = '\0';
+	}
+	
+	void mystring::operator=(char *in){
+		if(buflen < strlen(in)) {
+			throw bad_alloc();
+		}
+		strncpy(buf, in, strlen(in));
+	}
+	
+	void mystring::operator=(const char *in){
+		if(buflen < strlen(in)) {
+			throw bad_alloc();
+		}
+		strncpy(buf, in, strlen(in));
+	}
 }

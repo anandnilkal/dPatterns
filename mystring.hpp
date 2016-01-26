@@ -33,9 +33,11 @@ namespace imo {
 			void assign(char*);
 			void assign(const char*);
 	
-//			void operator=(char*);
-//			void operator=(const char*);
+			void operator=(char*);
+			void operator=(const char*);
 	
+			void operator=(mystring&);
+			void operator=(const mystring&);
 			size_t length() const;
 			char* getbuf() const;
 	

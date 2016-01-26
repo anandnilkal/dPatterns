@@ -23,5 +23,12 @@ int main(int argc, char** argv){
 	mystring two(10);
 	two.assign("anand");
 	std::cout << one.getbuf() << " " << two.getbuf() << std::endl;
+	mystring three(10);
+	three = "hello";
+	
+	mystring four(10);
+	four.assign("anand");
+	
+	std::cout << three.getbuf() << " " << four.getbuf() << std::endl;
 	
 }
