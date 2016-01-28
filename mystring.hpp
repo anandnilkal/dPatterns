@@ -23,12 +23,12 @@ namespace imo {
 		}
 	};
 	
-	class mystring {
+	class string {
 		public:
-			mystring(char*);
-			mystring(uint32_t);
-			mystring(const char*);
-			mystring(const mystring&);
+			string(char*);
+			string(uint32_t);
+			string(const char*);
+			string(const string&);
 	
 			void assign(char*);
 			void assign(const char*);
@@ -36,8 +36,8 @@ namespace imo {
 			void operator=(char*);
 			void operator=(const char*);
 	
-			void operator=(mystring&);
-			void operator=(const mystring&);
+			void operator=(string&);
+			void operator=(const string&);
 
 			size_t length() const;
 			char* getbuf() const;

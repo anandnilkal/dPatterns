@@ -19,18 +19,18 @@ int main(int argc, char** argv){
 		delete object;
 	}
 	
-	mystring one("hello");
-	mystring two(10);
+	imo::string one("hello");
+	imo::string two(10);
 	two.assign("anand");
 	std::cout << one.getbuf() << " " << two.getbuf() << std::endl;
-	mystring three(10);
+	imo::string three(10);
 	three = "hello";
 	
-	mystring four(10);
+	imo::string four(10);
 	four.assign("anand");
 	
 	std::cout << three.getbuf() << " " << four.getbuf() << std::endl;
-	mystring five(1);
+	imo::string five(1);
 	try {
 		five.assign("hello");
 	} catch (imo::imo_exception& e) {

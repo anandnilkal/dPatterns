@@ -1,5 +1,5 @@
 //
-//  mystring.cpp
+//  string.cpp
 //  dPatterns
 //
 //  Created by Anand N Ilkal on 26/01/16.
@@ -12,7 +12,7 @@ using namespace std;
 
 namespace imo {
 	
-	mystring::mystring(char* in) {
+	string::string(char* in) {
 		buflen = strlen(in);
 		buf = reinterpret_cast<char*>(std::malloc(buflen + 1));
 		std::memset(buf, 0, buflen+1);
@@ -20,13 +20,13 @@ namespace imo {
 		buf[buflen] = '\0';
 	}
 	
-	mystring::mystring(uint32_t len) {
+	string::string(uint32_t len) {
 		buflen = len;
 		buf = reinterpret_cast<char*>(std::malloc(len + 1));
 		std::memset(buf, 0, len+1);
 	}
 	
-	mystring::mystring(const char* in) {
+	string::string(const char* in) {
 		buflen = strlen(in);
 		buf = reinterpret_cast<char*>(std::malloc(buflen+1));
 		std::memset(buf, 0, buflen+1);
@@ -34,7 +34,7 @@ namespace imo {
 		buf[buflen] = '\0';
 	}
 	
-	mystring::mystring(const mystring& in){
+	string::string(const string& in){
 		buflen = in.length();
 		buf = reinterpret_cast<char*>(std::malloc(buflen + 1));
 		std::memset(buf, 0, buflen+1);
@@ -42,29 +42,29 @@ namespace imo {
 		buf[buflen] = '\0';
 	}
 	
-	inline size_t mystring::length() const {
+	inline size_t string::length() const {
 		return buflen;
 	}
 	
-	inline char* mystring::getbuf() const {
+	inline char* string::getbuf() const {
 		return buf;
 	}
 	
-	void mystring::assign(char* in) {
+	void string::assign(char* in) {
 		if(buflen < strlen(in)) {
 			throw imo_exception();
 		}
 		strncpy(buf, in, strlen(in));
 	}
 	
-	void mystring::assign(const char* in) {
+	void string::assign(const char* in) {
 		if(buflen < strlen(in)) {
 			throw imo_exception();
 		}
 		strncpy(buf, in, strlen(in));
 	}
 	
-	void mystring::operator=(mystring& in){
+	void string::operator=(string& in){
 		buflen = in.length();
 		buf = reinterpret_cast<char*>(std::malloc(buflen + 1));
 		std::memset(buf, 0, buflen+1);
@@ -72,7 +72,7 @@ namespace imo {
 		buf[buflen] = '\0';
 	}
 	
-	void mystring::operator=(const mystring& in){
+	void string::operator=(const string& in){
 		buflen = in.length();
 		buf = reinterpret_cast<char*>(std::malloc(buflen + 1));
 		std::memset(buf, 0, buflen+1);
@@ -80,14 +80,14 @@ namespace imo {
 		buf[buflen] = '\0';
 	}
 	
-	void mystring::operator=(char *in){
+	void string::operator=(char *in){
 		if(buflen < strlen(in)) {
 			throw imo_exception();
 		}
 		strncpy(buf, in, strlen(in));
 	}
 	
-	void mystring::operator=(const char *in){
+	void string::operator=(const char *in){
 		if(buflen < strlen(in)) {
 			throw imo_exception();
 		}
