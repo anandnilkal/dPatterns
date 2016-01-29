@@ -36,4 +36,7 @@ int main(int argc, char** argv){
 	} catch (imo::imo_exception& e) {
 		std::cout << e.what() << std::endl;
 	}
+	
+	imo::string six("hello aniketh");
+	std::cout << six() << std::endl;
 }

@@ -11,6 +11,10 @@
 using namespace std;
 
 namespace imo {
+	string::string() {
+		buf = nullptr;
+		buflen = 0;
+	}
 	
 	string::string(char* in) {
 		buflen = strlen(in);
@@ -21,9 +25,11 @@ namespace imo {
 	}
 	
 	string::string(uint32_t len) {
-		buflen = len;
-		buf = reinterpret_cast<char*>(std::malloc(len + 1));
-		std::memset(buf, 0, len+1);
+		if(len) {
+			buflen = len;
+			buf = reinterpret_cast<char*>(std::malloc(len + 1));
+			std::memset(buf, 0, len+1);
+		}
 	}
 	
 	string::string(const char* in) {
@@ -92,5 +98,13 @@ namespace imo {
 			throw imo_exception();
 		}
 		strncpy(buf, in, strlen(in));
+	}
+	
+	char* string::operator()() {
+		if(buflen) {
+			return buf;
+		} else {
+			return nullptr;
+		}
 	}
 }

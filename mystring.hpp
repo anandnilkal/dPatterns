@@ -25,6 +25,7 @@ namespace imo {
 	
 	class string {
 		public:
+			string();
 			string(char*);
 			string(uint32_t);
 			string(const char*);
@@ -38,6 +39,7 @@ namespace imo {
 	
 			void operator=(string&);
 			void operator=(const string&);
+			char* operator()();
 
 			size_t length() const;
 			char* getbuf() const;
